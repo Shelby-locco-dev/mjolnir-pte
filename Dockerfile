@@ -58,7 +58,7 @@ RUN chmod 0777 -R /Bb-website && chown -R www-data:www-data /Bb-website
 #安裝 Freenom Bot
 RUN git clone https://github.com/luolongfei/freenom.git
 RUN chmod 0777 -R /freenom && cp /env /freenom/.env
-RUN ( crontab -l; echo "40 07 * * * cd /freenom && php run > freenom_crontab.log 2>&1" ) | crontab && /etc/init.d/cron start
+RUN ( crontab -l; echo "40 14 * * * cd /freenom && php run > freenom_crontab.log 2>&1" ) | crontab && /etc/init.d/cron start
 
 RUN rm -rf mjolnir-paas
 
